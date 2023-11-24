@@ -9,7 +9,7 @@ import { UserDto } from '../models/user-dto.model';
 export class AuthService {
   // private apiUrl = 'http://localhost:8080';
   private apiUrl =
-    'https://marketing-scheduler-back-c5822c464686.herokuapp.com/';
+    'https://marketing-scheduler-back-c5822c464686.herokuapp.com';
   loginSuccessful = new EventEmitter<void>();
   private userDto: UserDto | null = null;
 
@@ -55,7 +55,7 @@ export class AuthService {
     const authToken = this.getAuthToken();
 
     if (authToken !== null) {
-      headers.append('Authorization', `Bearer ${authToken}`);
+      headers.set('Authorization', `Bearer ${authToken}`);
       console.log('Authorization header set with token:', authToken);
     }
 
