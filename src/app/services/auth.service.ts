@@ -26,23 +26,23 @@ export class AuthService {
   getLogin(): any {
     const userJson = window.localStorage.getItem('login');
     const user = userJson ? JSON.parse(userJson) : null;
-    //console.log('User from localStorage:', user);
+    console.log('User from localStorage:', user);
     return user;
   }
 
   getAuthToken(): string | null {
     const token = window.localStorage.getItem('auth_token');
-    //console.log('Token retrieved from localStorage:', token);
+    console.log('Token retrieved from localStorage:', token);
     return token;
   }
 
   setAuthToken(token: string | null): void {
     if (token !== null) {
       window.localStorage.setItem('auth_token', token);
-      //console.log('Token saved to localStorage:', token);
+      console.log('Token saved to localStorage:', token);
     } else {
       window.localStorage.removeItem('auth_token');
-      //console.log('Token removed from localStorage');
+      console.log('Token removed from localStorage');
     }
   }
 
