@@ -56,22 +56,22 @@ export class AuthService {
 
     if (authToken !== null) {
       headers.set('Authorization', `Bearer ${authToken}`);
-      //console.log('Authorization header set with token:', authToken);
+      console.log('Authorization header set with token:', authToken);
     }
 
     const requestOptions = {
       headers: headers,
     };
 
-    //console.log(`Making ${method} request to ${this.apiUrl}${url}`);
+    console.log(`Making ${method} request to ${this.apiUrl}${url}`);
 
     if (method === 'GET') {
       return this.http.get(`${this.apiUrl}${url}`, requestOptions);
     } else if (method === 'POST') {
-      //console.log('Request data:', data);
+      console.log('Request data:', data);
       return this.http.post(`${this.apiUrl}${url}`, data, requestOptions);
     } else if (method === 'PUT') {
-      //console.log('Request data:', data);
+      console.log('Request data:', data);
       return this.http.put(`${this.apiUrl}${url}`, data, requestOptions);
     } else if (method === 'DELETE') {
       //console.log('Request data:', data);
