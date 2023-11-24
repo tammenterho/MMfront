@@ -55,7 +55,7 @@ export class AuthService {
     const authToken = this.getAuthToken();
 
     if (authToken !== null) {
-      headers.set('Authorization', `Bearer ${authToken}`);
+      headers.append('Authorization', `Bearer ${authToken}`);
       console.log('Authorization header set with token:', authToken);
     }
 
