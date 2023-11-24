@@ -1,0 +1,51 @@
+.campaigns-table {
+  width: 95%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.campaigns-table td,
+th {
+  padding: 15px 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.datarows {
+  transition: transform 0.3s ease; /* Aseta siirtymä aika ja toiminto */
+}
+
+.datarows:hover {
+  transform: scale(1.01); /* Suurentaa elementtiä hover-tilassa */
+}
+
+th {
+  background-color: rgb(136, 112, 167);
+  color: #ffffff;
+  padding: 60px 0px;
+}
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+tr:nth-child(even) {
+  background-color: #eae3e3;
+}
+
+.timebuttons {
+  position: absolute;
+  background-color: rgb(136, 112, 167);
+  margin-bottom: 35px;
+  width: 40%;
+}
+
+h3 {
+  color: aliceblue;
+  position: absolute;
+  margin-left: 80%;
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+.delete-icon {
+  height: 30px;
+}

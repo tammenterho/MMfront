@@ -1,0 +1,14 @@
+.app-footer {
+  margin-top: auto;
+  min-height: 2vh; /* Automaattinen marginaali ylhäältä saa footerin liikkumaan alas */
+}
+
+.app-header {
+  min-height: 10vh; /* Automaattinen marginaali ylhäältä saa footerin liikkumaan alas */
+}
+
+.app-home {
+  display: flex;
+  flex-direction: column;
+  min-height: 86vh; /* Tässä asetetaan vähimmäiskorkeus koko näkymälle */
+}

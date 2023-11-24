@@ -1,0 +1,26 @@
+<div *ngIf="componentToShow == 'logregister'">
+  <app-login
+    (onSubmitLoginEvent)="onLogin($event)"
+    (onSubmitRegisterEvent)="onRegister($event)"
+  >
+  </app-login>
+
+  <p class="login-to-see">Login to see your content</p>
+</div>
+
+<div class="content">
+  <div class="scheduler-container" *ngIf="componentToShow == 'data'">
+    <div class="welcome">
+      <button (click)="logOut()">Log out</button>
+      <h3>Hello {{ auth.getLogin()?.login }}!</h3>
+    </div>
+
+    <app-add-campaign></app-add-campaign>
+    <div class="campaign-container">
+      <app-campaigns></app-campaigns>
+    </div>
+  </div>
+  <div *ngIf="auth.getLogin()?.login == 'admin' && componentToShow == 'data'">
+    <app-users></app-users>
+  </div>
+</div>

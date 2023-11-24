@@ -1,0 +1,11 @@
+.header-container {
+  background-color: rgb(136, 112, 167);
+  height: 12vh;
+  padding-bottom: 50px;
+}
+
+.header-container h1 {
+  color: aliceblue;
+  text-align: center;
+  padding-top: 20px;
+}

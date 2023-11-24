@@ -1,0 +1,9 @@
+<div class="add-container">
+  <app-add-button
+    class="add-btn"
+    color="{{ showAddTask ? 'red' : 'green' }}"
+    text="{{ showAddTask ? 'close' : 'add' }}"
+    (btnClick)="toggleAddTask()"
+  ></app-add-button>
+  <app-campaign-form (onAddCampaign)="addCampaign($event)"></app-campaign-form>
+</div>

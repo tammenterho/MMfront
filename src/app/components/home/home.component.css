@@ -1,0 +1,17 @@
+button {
+  background-color: red;
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+}
+
+.welcome h3 {
+  margin-left: 50px;
+}
+
+.login-to-see {
+  text-align: center;
+  margin-top: 50px;
+}

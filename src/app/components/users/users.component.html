@@ -1,0 +1,18 @@
+<p>tässä käyttäjät</p>
+<button
+  [ngStyle]="{ 'background-color': color }"
+  class="btn"
+  (click)="showUsers()"
+>
+  Käyttäjät
+</button>
+<ul *ngIf="color == 'red'">
+  <li *ngFor="let user of users">
+    {{ user.firstName }} {{ user.lastName }} {{ user.id }}
+    <img
+      (click)="user.id && deleteUser(user.id)"
+      class="delete-icon"
+      src="../assets/images/delete-icon.svg"
+    />
+  </li>
+</ul>

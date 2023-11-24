@@ -1,0 +1,129 @@
+<form *ngIf="showAddTask" (ngSubmit)="onSubmit()">
+  <h3>Add campaign</h3>
+  <div class="input-company">
+    <label for="text">Yrityksen nimi</label>
+    <input
+      type="text"
+      name="inputCompany"
+      [(ngModel)]="inputCompany"
+      id="inputCompany"
+      placeholder="JarkkoConsultingOy"
+    />
+  </div>
+  <div class="input-name">
+    <label for="text">Name</label>
+    <input
+      type="text"
+      name="inputName"
+      [(ngModel)]="inputName"
+      id="inputName"
+      placeholder="Kesäkuu Vaasa veloituksetta"
+    />
+  </div>
+  <div class="input-adTitle">
+    <label for="title">Ad Title</label>
+    <input
+      type="text"
+      name="inputAdTitle"
+      [(ngModel)]="inputAdTitle"
+      id="inputAdTitle"
+      placeholder="Liity nyt ja saat kuukauden veloituksetta!"
+    />
+  </div>
+  <div class="input-adText">
+    <label for="inputAdText">Ad Text</label>
+    <textarea
+      type="text"
+      name="inputAdText"
+      [(ngModel)]="inputAdText"
+      id="inputAdText"
+      rows="5"
+    >
+    </textarea>
+  </div>
+  <div class="input-adTarget">
+    <label for="inputAdTarget">Ad Target</label>
+    <input
+      type="text"
+      name="inputAdTarget"
+      [(ngModel)]="inputAdTarget"
+      id="inputAdTarget"
+      placeholder="50v+ miehet"
+    />
+  </div>
+  <div class="input-adArea">
+    <label for="inputAdArea">Ad Area</label>
+    <input
+      type="text"
+      name="inputAdArea"
+      [(ngModel)]="inputAdArea"
+      id="inputAdArea"
+      placeholder="Turku, Raisio"
+    />
+  </div>
+  <div class="budget-date">
+    <div class="input-budget">
+      <label for="inputBudget">Budget (€)</label>
+      <input
+        type="number"
+        name="inputBudget"
+        [(ngModel)]="inputBudget"
+        id="inputBudget"
+        placeholder="500"
+      />
+    </div>
+    <div class="input-start">
+      <label for="inputStart">Start</label>
+      <input
+        type="date"
+        name="inputStart"
+        [(ngModel)]="inputStart"
+        id="inputStart"
+        placeholder="Turku, Raisio"
+      />
+    </div>
+    <div class="input-end">
+      <label for="inputEnd">End</label>
+      <input
+        type="date"
+        name="inputEnd"
+        [(ngModel)]="inputEnd"
+        id="inputEnd"
+        placeholder="Turku, Raisio"
+      />
+    </div>
+  </div>
+  <div class="input-media">
+    <label for="inputMedia">Media Info</label>
+    <textarea
+      type="text"
+      name="inputMedia"
+      [(ngModel)]="inputMedia"
+      id="inputMedia"
+      rows="5"
+    >
+    </textarea>
+  </div>
+  <div class="input-url">
+    <label for="inputUrl">Ad Url</label>
+    <input
+      type="text"
+      name="inputUrl"
+      [(ngModel)]="inputUrl"
+      id="inputUrl"
+      placeholder="www.kuntosali-hyvakunto.com"
+    />
+  </div>
+  <div class="input-other">
+    <label for="inputOther">Other Info</label>
+    <textarea
+      type="text"
+      name="inputOther"
+      [(ngModel)]="inputOther"
+      id="inputOther"
+      rows="3"
+    >
+    </textarea>
+  </div>
+  <input type="submit" value="Save Campaign" class="btn-campaign-save" />
+</form>

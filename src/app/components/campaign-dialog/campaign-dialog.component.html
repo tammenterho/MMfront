@@ -1,0 +1,27 @@
+<div class="popup">
+  <p>Campaign Creator number : {{ campaignData.owner }}</p>
+  <h2>Campaign Info</h2>
+  <h3 *ngIf="campaignData">NAME: {{ campaignData.name }}</h3>
+  <h4>Ad title</h4>
+  <p>{{ campaignData.adtitle }}</p>
+  <h4>Ad Text</h4>
+  <p>{{ campaignData.adtext }}</p>
+  <h4>Ad Target</h4>
+  <p>{{ campaignData.adtarget }}</p>
+  <h4>Ad Target Area</h4>
+  <p>{{ campaignData.adarea }}</p>
+  <h4>Ad Budget</h4>
+  <p>{{ campaignData.adbudget }} €</p>
+  <h4>Ad Duration</h4>
+  <p>
+    {{ campaignData.adstart | date : "dd.MM.yyyy" }} -
+    {{ campaignData.adend | date : "dd.MM.yyyy" }}
+  </p>
+
+  <h4>Ad Media Info</h4>
+  <p>{{ campaignData.mediainfo }}</p>
+  <h4>Ad Url / CTA</h4>
+  <p>{{ campaignData.adurl }}</p>
+  <h4>Ad Other Info</h4>
+  <p>{{ campaignData.adother }}</p>
+</div>

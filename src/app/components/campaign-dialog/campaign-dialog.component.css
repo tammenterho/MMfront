@@ -1,0 +1,14 @@
+.popup {
+  margin: 50px;
+}
+
+.popup p {
+  border: solid 1px black;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.popup h4 {
+  color: rgb(16, 16, 16);
+  font-weight: 300;
+}

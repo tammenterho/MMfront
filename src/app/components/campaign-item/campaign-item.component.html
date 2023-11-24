@@ -1,0 +1,69 @@
+<div class="timebuttons">
+  <h3 class="tableSize">{{ size }} kpl</h3>
+  <Button [ngStyle]="{ 'background-color': pastColor }" (click)="onPast()"
+    >Past
+  </Button>
+  <Button [ngStyle]="{ 'background-color': currentColor }" (click)="onCurrent()"
+    >Current</Button
+  >
+  <Button
+    [ngStyle]="{ 'background-color': upcomingColor }"
+    (click)="onUpcoming()"
+    >Upcoming</Button
+  >
+</div>
+
+<table class="campaigns-table">
+  <tr>
+    <th>COMPANY</th>
+    <th>NAME</th>
+    <th>START</th>
+    <th>END</th>
+    <th>BUDGET</th>
+    <th>STATUS</th>
+  </tr>
+  <tr *ngFor="let campaign of filteredCampaigns" class="datarows">
+    <td (click)="campaign.id && openDialog(campaign.id)">
+      {{ campaign.company }}
+    </td>
+    <td (click)="campaign.id && openDialog(campaign.id)">
+      {{ campaign.name }}
+    </td>
+    <td (click)="campaign.id && openDialog(campaign.id)">
+      {{ campaign.adstart | date : "dd.MM.yyyy" }}
+    </td>
+    <td (click)="campaign.id && openDialog(campaign.id)">
+      {{ campaign.adend | date : "dd.MM.yyyy" }}
+    </td>
+    <td (click)="campaign.id && openDialog(campaign.id)">
+      {{ campaign.adbudget }} €
+    </td>
+    <td
+      class="status"
+      (click)="
+        user.login === 'admin' && campaign.id && toggleStatus(campaign.id)
+      "
+    >
+      {{ campaign.adstatus === "Y" ? "✓" : "❌" }}
+    </td>
+    <td
+      *ngIf="
+        user.login === 'admin' ||
+        (user.login !== 'admin' && campaign.adstatus === 'N')
+      "
+    >
+      <img
+        (click)="campaign.id && deleteCampaign(campaign.id)"
+        class="delete-icon"
+        src="../assets/images/delete-icon.svg"
+      />
+    </td>
+  </tr>
+</table>
+<app-campaign-dialog
+  *ngIf="showWholeCampaign"
+  [ngStyle]="{
+    'background-color': showWholeCampaign ? upcomingColor : 'transparent'
+  }"
+  [campaignData]="campaignData"
+></app-campaign-dialog>
