@@ -7,7 +7,9 @@ import { UserDto } from '../models/user-dto.model';
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8080';
+  // private apiUrl = 'http://localhost:8080';
+  private apiUrl =
+    'https://marketing-scheduler-back-c5822c464686.herokuapp.com/';
   loginSuccessful = new EventEmitter<void>();
   private userDto: UserDto | null = null;
 
