@@ -7,9 +7,8 @@ import { UserDto } from '../models/user-dto.model';
   providedIn: 'root',
 })
 export class AuthService {
-  // private apiUrl = 'http://localhost:8080';
-  private apiUrl =
-    'https://marketing-scheduler-back-c5822c464686.herokuapp.com';
+  private apiUrl = 'http://localhost:8080';
+
   loginSuccessful = new EventEmitter<void>();
   private userDto: UserDto | null = null;
 
@@ -26,23 +25,23 @@ export class AuthService {
   getLogin(): any {
     const userJson = window.localStorage.getItem('login');
     const user = userJson ? JSON.parse(userJson) : null;
-    console.log('User from localStorage:', user);
+    // console.log('User from localStorage:', user);
     return user;
   }
 
   getAuthToken(): string | null {
     const token = window.localStorage.getItem('auth_token');
-    console.log('Token retrieved from localStorage:', token);
+    //console.log('Token retrieved from localStorage:', token);
     return token;
   }
 
   setAuthToken(token: string | null): void {
     if (token !== null) {
       window.localStorage.setItem('auth_token', token);
-      console.log('Token saved to localStorage:', token);
+      //console.log('Token saved to localStorage:', token);
     } else {
       window.localStorage.removeItem('auth_token');
-      console.log('Token removed from localStorage');
+      //console.log('Token removed from localStorage');
     }
   }
 
@@ -56,7 +55,8 @@ export class AuthService {
 
     if (authToken !== null) {
       headers.set('Authorization', `Bearer ${authToken}`);
-      console.log('Authorization header set with token:', authToken);
+
+      //console.log('Authorization header set with token:', authToken);
     }
 
     const requestOptions = {
@@ -68,10 +68,10 @@ export class AuthService {
     if (method === 'GET') {
       return this.http.get(`${this.apiUrl}${url}`, requestOptions);
     } else if (method === 'POST') {
-      console.log('Request data:', data);
+      //console.log('Request data:', data);
       return this.http.post(`${this.apiUrl}${url}`, data, requestOptions);
     } else if (method === 'PUT') {
-      console.log('Request data:', data);
+      //console.log('Request data:', data);
       return this.http.put(`${this.apiUrl}${url}`, data, requestOptions);
     } else if (method === 'DELETE') {
       //console.log('Request data:', data);

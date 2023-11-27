@@ -9,8 +9,7 @@ import { map, catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl =
-    'https://marketing-scheduler-back-c5822c464686.herokuapp.com/';
+  private apiUrl = 'http://localhost:8080/users';
 
   constructor(private http: HttpClient, private auth: AuthService) {}
 

@@ -9,8 +9,7 @@ import { map, catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class CampaignService {
-  private apiUrl =
-    'https://marketing-scheduler-back-c5822c464686.herokuapp.com/';
+  private apiUrl = 'http://localhost:8080/campaigns';
 
   constructor(private http: HttpClient, private auth: AuthService) {}
 
@@ -20,7 +19,7 @@ export class CampaignService {
       Authorization: 'Bearer ' + this.auth.getAuthToken(),
     });
 
-    //console.log('SENDING Auth Token:', this.auth.getAuthToken());
+    console.log('SENDING Auth Token:', this.auth.getAuthToken());
 
     return this.http.get<Campaign[]>(this.apiUrl, { headers: headers });
   }
