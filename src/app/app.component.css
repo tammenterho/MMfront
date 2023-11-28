@@ -1,6 +1,7 @@
 .app-footer {
   margin-top: auto;
-  min-height: 2vh; /* Automaattinen marginaali ylhäältä saa footerin liikkumaan alas */
+  min-height: 80px; /* Automaattinen marginaali ylhäältä saa footerin liikkumaan alas */
+  background-color: blueviolet;
 }
 
 .app-header {

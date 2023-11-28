@@ -22,6 +22,8 @@
     </div>
   </div>
   <div *ngIf="auth.getLogin()?.login == 'admin' && componentToShow == 'data'">
-    <app-users></app-users>
+    <div class="users-container">
+      <app-users></app-users>
+    </div>
   </div>
 </div>

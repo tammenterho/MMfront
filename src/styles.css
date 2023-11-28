@@ -6,6 +6,12 @@ body {
   background-color: rgb(248, 250, 246);
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .campaign-container {
   border: 3px solid black;
   width: 90vw;
@@ -17,9 +23,14 @@ body {
 }
 
 .add-container {
-  width: 75vw;
+  width: 90vw;
   margin: 20px auto;
   align-items: center;
+}
+
+.users-container {
+  width: 90vw;
+  margin: 20px auto;
 }
 
 Button {
