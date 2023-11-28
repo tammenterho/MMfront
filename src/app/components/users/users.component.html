@@ -6,13 +6,31 @@
 >
   Käyttäjät
 </button>
-<ul *ngIf="color == 'red'">
-  <li *ngFor="let user of users">
-    {{ user.firstName }} {{ user.lastName }} {{ user.id }}
+<table class="users-table" *ngIf="color == 'red'">
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Username</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>
+      {{ user.id }}
+    </td>
+    <td>
+      {{ user.firstName }}
+    </td>
+    <td>
+      {{ user.lastName }}
+    </td>
+    <td>
+      {{ user.login }}
+    </td>
+
     <img
       (click)="user.id && deleteUser(user.id)"
       class="delete-icon"
       src="../assets/images/delete-icon.svg"
     />
-  </li>
-</ul>
+  </tr>
+</table>

@@ -4,6 +4,7 @@ import { AuthService } from './auth.service';
 import { Observable } from 'rxjs';
 import { User } from '../User';
 import { map, catchError } from 'rxjs/operators';
+import { ConsoleLogger } from '@angular/compiler-cli';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,7 @@ export class UserService {
   constructor(private http: HttpClient, private auth: AuthService) {}
 
   getUsers(): Observable<User[]> {
-    console.log('haetaan nyt servocessä');
+    console.log('haetaan nyt servicessä');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.auth.getAuthToken(),

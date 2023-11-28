@@ -11,6 +11,7 @@
 <div class="content">
   <div class="scheduler-container" *ngIf="componentToShow == 'data'">
     <div class="welcome">
+      <img class="ms-logo" src="../assets/images/ms-logo.svg" alt="" />
       <button (click)="logOut()">Log out</button>
       <h3>Hello {{ auth.getLogin()?.login }}!</h3>
     </div>
