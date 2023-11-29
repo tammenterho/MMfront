@@ -1,6 +1,10 @@
 <div class="popup">
-  <p>Campaign Creator number : {{ campaignData.owner }}</p>
-  <h2>Campaign Info</h2>
+  <div class="creator">
+    <p class="creator-title">Campaign Creator:</p>
+
+    <p class="creator-name">{{ campaignData.creator }}</p>
+  </div>
+
   <h3 *ngIf="campaignData">NAME: {{ campaignData.name }}</h3>
   <h4>Ad title</h4>
   <p>{{ campaignData.adtitle }}</p>

@@ -31,6 +31,8 @@ export class CampaignService {
     });
 
     //console.log('adding');
+    console.log('kampanja!! ' + JSON.stringify(campaign));
+
     return this.http.post<Campaign>(this.apiUrl, campaign, {
       headers: headers,
     });

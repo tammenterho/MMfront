@@ -49,8 +49,11 @@ export class CampaignFormComponent {
     }
 
     let idNumber = Math.floor(Math.random() * 100);
+    let creator =
+      this.auth.getLogin().firstName + ' ' + this.auth.getLogin().lastName;
 
     const newCampaign = {
+      creator: creator,
       id: idNumber,
       company: this.inputCompany,
       owner: user.id,

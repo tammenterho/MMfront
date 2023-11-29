@@ -1,4 +1,5 @@
 export interface Campaign {
+  creator?: string;
   company: string;
   id?: number;
   owner: number;
