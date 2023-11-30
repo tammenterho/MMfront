@@ -54,3 +54,8 @@ h3 {
   overflow: visible;
   background-color: antiquewhite;
 }
+
+.noCampaigns {
+  text-align: center;
+  color: aliceblue;
+}

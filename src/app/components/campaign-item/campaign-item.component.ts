@@ -22,6 +22,8 @@ export class CampaignItemComponent implements OnInit {
   showWholeCampaign: boolean = false;
   campaignData!: Campaign;
   user: any;
+  noCampaigns: boolean = false;
+  emptyCampaigns: string = 'moi';
 
   constructor(
     private campaignService: CampaignService,
@@ -66,6 +68,7 @@ export class CampaignItemComponent implements OnInit {
     this.currentColor = 'grey';
     this.pastColor = 'green';
     this.size = this.filteredCampaigns.length;
+    this.emptyCampaigns = 'There have not been any campaigns';
   }
   onCurrent() {
     this.campaignTime = 'current';
@@ -74,6 +77,7 @@ export class CampaignItemComponent implements OnInit {
     this.currentColor = 'green';
     this.pastColor = 'grey';
     this.size = this.filteredCampaigns.length;
+    this.emptyCampaigns = 'Theres no campaigns running at the moment';
   }
   onUpcoming() {
     this.campaignTime = 'upcoming';
@@ -82,6 +86,7 @@ export class CampaignItemComponent implements OnInit {
     this.currentColor = 'grey';
     this.pastColor = 'grey';
     this.size = this.filteredCampaigns.length;
+    this.emptyCampaigns = 'Theres no upcoming campaigns';
   }
 
   // filteröi listat sen mukaan onko startdate mennyt vai tulossa vai onko nyt start ja endin välissä
@@ -98,6 +103,11 @@ export class CampaignItemComponent implements OnInit {
         return endDateB - endDateA;
         // myöhäisin enddate on ylimpänä listassa
       });
+      if (this.filteredCampaigns.length === 0) {
+        this.noCampaigns = true;
+      } else {
+        this.noCampaigns = false;
+      }
     } else if (this.campaignTime === 'current') {
       this.filteredCampaigns = this.campaigns.filter(
         (campaign) =>
@@ -110,6 +120,11 @@ export class CampaignItemComponent implements OnInit {
         return startDateA - startDateB;
         // aikaisin startdate on ylimpänä listassa
       });
+      if (this.filteredCampaigns.length === 0) {
+        this.noCampaigns = true;
+      } else {
+        this.noCampaigns = false;
+      }
     } else if (this.campaignTime === 'upcoming') {
       this.filteredCampaigns = this.campaigns.filter(
         (campaign) => new Date(campaign.adstart) > currentDate
@@ -120,6 +135,11 @@ export class CampaignItemComponent implements OnInit {
         return startDateA - startDateB;
         // aikaisin startdate on ylimpänä listassa
       });
+      if (this.filteredCampaigns.length === 0) {
+        this.noCampaigns = true;
+      } else {
+        this.noCampaigns = false;
+      }
     }
   }
 

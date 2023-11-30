@@ -60,6 +60,9 @@
     </td>
   </tr>
 </table>
+
+<p *ngIf="noCampaigns" class="noCampaigns">{{ emptyCampaigns }}</p>
+
 <app-campaign-dialog
   *ngIf="showWholeCampaign"
   [ngStyle]="{
