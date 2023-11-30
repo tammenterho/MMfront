@@ -58,6 +58,13 @@ export class CampaignItemComponent implements OnInit {
       this.filteredCampaigns = [...this.campaigns]; // Kopio alkuperäisestä taulukosta
       this.filterCampaigns(); // filteröidään currentin mukaan heti. sbscribe asynkroninen kuten then
       this.size = this.filteredCampaigns.length; // asetaan listan koko heti
+
+      if (this.filteredCampaigns.length === 0) {
+        this.noCampaigns = true;
+        this.emptyCampaigns = 'Theres no campaigns running at the moment';
+      } else {
+        this.noCampaigns = false;
+      }
     });
   }
 
