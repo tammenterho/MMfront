@@ -22,7 +22,6 @@ th {
 th {
   background-color: rgb(136, 112, 167);
   color: #ffffff;
-  padding: 60px 0px;
 }
 tr:nth-child(odd) {
   background-color: #ffffff;
@@ -32,18 +31,34 @@ tr:nth-child(even) {
 }
 
 .timebuttons {
-  position: absolute;
-  background-color: rgb(136, 112, 167);
-  margin-bottom: 35px;
-  width: 40%;
+  position: relative; /* Change to relative positioning */
+  margin-bottom: 10px;
+  width: 90%;
+  display: flex; /* Use flexbox to align items horizontally */
+  align-items: left; /* Align items vertically in the center */
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 600px) {
+  .timebuttons {
+    flex-wrap: wrap; /* Aseta wrap, jotta nappulat siirtyvät uudelle riville */
+  }
+
+  .timebuttons button {
+    flex: 1; /* Joustava leveys */
+  }
+
+  h3 {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 }
 
 h3 {
   color: aliceblue;
-  position: absolute;
-  margin-left: 80%;
-  margin-top: 10px;
   font-weight: 300;
+  margin-left: auto;
+  margin-top: 10px;
 }
 
 .delete-icon {

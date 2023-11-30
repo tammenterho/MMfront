@@ -1,5 +1,4 @@
 <div class="timebuttons">
-  <h3 class="tableSize">{{ size }} kpl</h3>
   <Button [ngStyle]="{ 'background-color': pastColor }" (click)="onPast()"
     >Past
   </Button>
@@ -11,6 +10,7 @@
     (click)="onUpcoming()"
     >Upcoming</Button
   >
+  <h3 class="tableSize">{{ size }} kpl</h3>
 </div>
 
 <table class="campaigns-table">
