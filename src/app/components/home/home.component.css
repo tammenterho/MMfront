@@ -6,12 +6,12 @@ button {
   z-index: 999;
 }
 
-.ms-logo {
-  position: absolute; /* Aseta kiinteä sijainti */
-  top: 10px; /* Aseta yläreunaan 10 pikseliä */
-  left: 50px; /* Aseta vasempaan reunaan 10 pikseliä */
-  z-index: 999;
-  height: 60px;
+@media screen and (max-width: 600px) {
+  button {
+    font-size: small;
+    right: 5px;
+    padding: 5px;
+  }
 }
 
 .welcome {
