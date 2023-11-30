@@ -1,5 +1,6 @@
 .popup p {
   font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 400;
 }
 
 .popup h4 {
@@ -22,6 +23,7 @@
 }
 .creator-name {
   font-style: italic;
+  margin-left: 20px;
 }
 /*
  border-bottom: solid 1px black;

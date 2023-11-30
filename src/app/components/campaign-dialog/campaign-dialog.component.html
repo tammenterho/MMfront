@@ -1,31 +1,31 @@
 <div class="popup">
   <div class="creator">
     <p class="creator-title">Campaign Creator:</p>
-
     <p class="creator-name">{{ campaignData.creator }}</p>
   </div>
 
-  <h3 *ngIf="campaignData">NAME: {{ campaignData.name }}</h3>
-  <h4>Ad title</h4>
-  <p>{{ campaignData.adtitle }}</p>
-  <h4>Ad Text</h4>
-  <p>{{ campaignData.adtext }}</p>
-  <h4>Ad Target</h4>
+  <h4 *ngIf="campaignData">Name of the Campaign</h4>
+  <p>{{ campaignData.name }}</p>
+  <h4>Campaign title</h4>
+  <p>"{{ campaignData.adtitle }}"</p>
+  <h4>Campaign copy</h4>
+  <p>"{{ campaignData.adtext }}"</p>
+  <h4>Target demographics</h4>
   <p>{{ campaignData.adtarget }}</p>
-  <h4>Ad Target Area</h4>
+  <h4>Target area</h4>
   <p>{{ campaignData.adarea }}</p>
-  <h4>Ad Budget</h4>
+  <h4>Budget</h4>
   <p>{{ campaignData.adbudget }} €</p>
-  <h4>Ad Duration</h4>
+  <h4>Duration</h4>
   <p>
     {{ campaignData.adstart | date : "dd.MM.yyyy" }} -
     {{ campaignData.adend | date : "dd.MM.yyyy" }}
   </p>
 
-  <h4>Ad Media Info</h4>
+  <h4>Media for the campaign</h4>
   <p>{{ campaignData.mediainfo }}</p>
-  <h4>Ad Url / CTA</h4>
+  <h4>Url and CTA</h4>
   <p>{{ campaignData.adurl }}</p>
-  <h4>Ad Other Info</h4>
+  <h4>Other info</h4>
   <p>{{ campaignData.adother }}</p>
 </div>

@@ -1,7 +1,7 @@
 import { Component, Input, Inject } from '@angular/core';
 import { Campaign } from 'src/app/Campaign';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AuthService } from 'src/app/services/auth.service';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-campaign-dialog',
@@ -11,15 +11,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class CampaignDialogComponent {
   campaigns: Campaign[] = [];
   @Input() campaignData!: Campaign;
-  userFirstName: string = '';
-  userLastName: string = '';
 
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Campaign,
-    private auth: AuthService
-  ) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Campaign) {
     this.campaignData = data;
-    this.userFirstName = auth.getLogin().firstName;
-    this.userLastName = auth.getLogin().lastName;
   }
 }
