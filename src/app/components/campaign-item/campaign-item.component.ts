@@ -61,7 +61,7 @@ export class CampaignItemComponent implements OnInit {
 
       if (this.filteredCampaigns.length === 0) {
         this.noCampaigns = true;
-        this.emptyCampaigns = 'Theres no campaigns running at the moment';
+        this.emptyCampaigns = 'There is no campaigns running at the moment';
       } else {
         this.noCampaigns = false;
       }
