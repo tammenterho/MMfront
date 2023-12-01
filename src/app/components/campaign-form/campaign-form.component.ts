@@ -3,6 +3,7 @@ import { Campaign } from 'src/app/Campaign';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
+
 import { DropdownModule } from 'primeng/dropdown';
 
 interface Gender {
@@ -42,7 +43,7 @@ export class CampaignFormComponent {
   showAddTask!: boolean;
   subscription: Subscription;
 
-  constructor(private uiService: UiService, private auth: AuthService) {
+  constructor(private uiService: UiService, public auth: AuthService) {
     this.subscription = this.uiService
       .onToggle()
       .subscribe((value) => (this.showAddTask = value));
