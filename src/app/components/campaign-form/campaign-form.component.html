@@ -1,64 +1,66 @@
 <form *ngIf="showAddTask" (ngSubmit)="onSubmit()">
-  <h3>Add campaign</h3>
+  <h3>Add new campaign</h3>
   <div class="input-company">
-    <label for="text">Yrityksen nimi</label>
+    <label for="text">Name of the company</label>
     <input
       type="text"
       name="inputCompany"
       [(ngModel)]="inputCompany"
       id="inputCompany"
-      placeholder="JarkkoConsultingOy"
+      placeholder="e.g. Pekka's Cars and Tyres Company"
     />
   </div>
   <div class="input-name">
-    <label for="text">Name</label>
+    <label for="text">Name of the campaign</label>
     <input
       type="text"
       name="inputName"
       [(ngModel)]="inputName"
       id="inputName"
-      placeholder="Kesäkuu Vaasa veloituksetta"
+      placeholder="e.g. Winter Campaign 2023"
     />
   </div>
   <div class="input-adTitle">
-    <label for="title">Ad Title</label>
+    <label for="title">Title for the Campaign</label>
     <input
       type="text"
       name="inputAdTitle"
       [(ngModel)]="inputAdTitle"
       id="inputAdTitle"
-      placeholder="Liity nyt ja saat kuukauden veloituksetta!"
+      placeholder="e.g. 50% off Winter tyres!"
     />
   </div>
   <div class="input-adText">
-    <label for="inputAdText">Ad Text</label>
+    <label for="inputAdText">Copytext for the Campaign</label>
     <textarea
       type="text"
       name="inputAdText"
       [(ngModel)]="inputAdText"
       id="inputAdText"
       rows="5"
+      placeholder="e.g. Rev up your winter readiness with an exclusive offer – 50% off on Winter Tyres! Ensure a safe and smooth journey through the chilly months with top-notch traction and performance. Don't let winter catch you off guard – seize this limited-time opportunity to equip your vehicle with high-quality winter tyres at half the price. "
     >
     </textarea>
   </div>
   <div class="input-adTarget">
-    <label for="inputAdTarget">Ad Target</label>
+    <label for="inputAdTarget">Target Demographics</label>
     <input
       type="text"
       name="inputAdTarget"
       [(ngModel)]="inputAdTarget"
       id="inputAdTarget"
-      placeholder="50v+ miehet"
+      placeholder="e.g. All ages, only males"
     />
   </div>
+
   <div class="input-adArea">
-    <label for="inputAdArea">Ad Area</label>
+    <label for="inputAdArea">Target Area</label>
     <input
       type="text"
       name="inputAdArea"
       [(ngModel)]="inputAdArea"
       id="inputAdArea"
-      placeholder="Turku, Raisio"
+      placeholder="e.g. Central Munchen Area"
     />
   </div>
   <div class="budget-date">
@@ -69,7 +71,7 @@
         name="inputBudget"
         [(ngModel)]="inputBudget"
         id="inputBudget"
-        placeholder="500"
+        placeholder="e.g. 500"
       />
     </div>
     <div class="input-start">
@@ -79,18 +81,11 @@
         name="inputStart"
         [(ngModel)]="inputStart"
         id="inputStart"
-        placeholder="Turku, Raisio"
       />
     </div>
     <div class="input-end">
       <label for="inputEnd">End</label>
-      <input
-        type="date"
-        name="inputEnd"
-        [(ngModel)]="inputEnd"
-        id="inputEnd"
-        placeholder="Turku, Raisio"
-      />
+      <input type="date" name="inputEnd" [(ngModel)]="inputEnd" id="inputEnd" />
     </div>
   </div>
   <div class="input-media">
@@ -101,17 +96,18 @@
       [(ngModel)]="inputMedia"
       id="inputMedia"
       rows="5"
+      placeholder="e.g. Create a visually compelling image for our 50% off Winter Tyres promotion by capturing the essence of winter readiness. Utilize cool, wintry tones such as blues and whites to evoke a sense of crisp, snowy landscapes. Incorporate imagery of a vehicle equipped with winter tyres navigating through snow-covered roads, highlighting the enhanced traction and safety."
     >
     </textarea>
   </div>
   <div class="input-url">
-    <label for="inputUrl">Ad Url</label>
+    <label for="inputUrl">Campaign URL and CTA</label>
     <input
       type="text"
       name="inputUrl"
       [(ngModel)]="inputUrl"
       id="inputUrl"
-      placeholder="www.kuntosali-hyvakunto.com"
+      placeholder="e.g. www.pekkascar.com  Take this offer!"
     />
   </div>
   <div class="input-other">
@@ -122,6 +118,7 @@
       [(ngModel)]="inputOther"
       id="inputOther"
       rows="3"
+      placeholder="e.g. Contact me via pekkascar@hotmail.com. Not on the weekends. Keep up the good work! Don't hesitate to ask anything."
     >
     </textarea>
   </div>

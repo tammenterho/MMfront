@@ -24,3 +24,9 @@ label {
 .btn-campaign-save {
   width: 20%;
 }
+
+::placeholder {
+  color: rgb(178, 178, 178);
+  opacity: 1; /* Firefox */
+  font-style: italic;
+}

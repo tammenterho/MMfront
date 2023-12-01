@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UsersComponent {
   users: User[] = [];
-  color: string = 'green';
+  color: string = 'success';
 
   constructor(private userService: UserService) {}
 
@@ -30,11 +30,11 @@ export class UsersComponent {
   }
 
   showUsers() {
-    if (this.color == 'red') {
-      this.color = 'green';
+    if (this.color == 'danger') {
+      this.color = 'success';
       this.getAllUsers();
     } else {
-      this.color = 'red';
+      this.color = 'danger';
     }
   }
 
@@ -58,7 +58,7 @@ export class UsersComponent {
           if (index !== -1) {
             this.users.splice(index, 1);
           }
-          this.color = 'red';
+          this.color = 'danger';
         },
       });
     }

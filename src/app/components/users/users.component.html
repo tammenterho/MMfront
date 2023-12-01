@@ -1,11 +1,11 @@
-<button
-  [ngStyle]="{ 'background-color': color }"
-  class="btn"
+<p-button
+  severity="{{ color }}"
+  class="p-button-success btn"
   (click)="showUsers()"
+  label="Users"
 >
-  Users
-</button>
-<table class="users-table" *ngIf="color == 'red'">
+</p-button>
+<table class="users-table" *ngIf="color == 'danger'">
   <tr>
     <th>ID</th>
     <th>Firstname</th>

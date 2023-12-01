@@ -8,6 +8,7 @@ import {
   MatDialogRef,
 } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ButtonModule } from 'primeng/button';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -47,6 +48,7 @@ import { UsersComponent } from './components/users/users.component';
     HttpClientModule,
     MatDialogModule,
     FormsModule,
+    ButtonModule,
     AuthModule.forRoot({
       domain: '{yourDomain}',
       clientId: '{yourClientId}',

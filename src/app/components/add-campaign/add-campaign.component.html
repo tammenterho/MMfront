@@ -1,7 +1,7 @@
 <div class="add-container">
   <app-add-button
     class="add-btn"
-    color="{{ showAddTask ? 'red' : 'green' }}"
+    color="{{ showAddTask ? 'danger' : 'success' }}"
     text="{{ showAddTask ? 'close' : 'add' }}"
     (btnClick)="toggleAddTask()"
   ></app-add-button>
