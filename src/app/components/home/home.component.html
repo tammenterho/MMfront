@@ -11,7 +11,9 @@
 <div class="content">
   <div class="scheduler-container" *ngIf="componentToShow == 'data'">
     <div class="welcome">
-      <button (click)="logOut()">Log out</button>
+      <p-button [raised]="true" severity="danger" (click)="logOut()"
+        >Log out</p-button
+      >
       <h3>Hello {{ auth.getLogin()?.login }}!</h3>
     </div>
 

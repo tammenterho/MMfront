@@ -1,14 +1,21 @@
 <div class="timebuttons">
-  <Button [ngStyle]="{ 'background-color': pastColor }" (click)="onPast()"
+  <p-button
+    [raised]="true"
+    [severity]="pastColor ? 'success' : 'secondary'"
+    (click)="onPast()"
     >Past
-  </Button>
-  <Button [ngStyle]="{ 'background-color': currentColor }" (click)="onCurrent()"
-    >Current</Button
+  </p-button>
+  <p-button
+    [raised]="true"
+    [severity]="currentColor ? 'success' : 'secondary'"
+    (click)="onCurrent()"
+    >Current</p-button
   >
-  <Button
-    [ngStyle]="{ 'background-color': upcomingColor }"
+  <p-button
+    [raised]="true"
+    [severity]="upcomingColor ? 'success' : 'secondary'"
     (click)="onUpcoming()"
-    >Upcoming</Button
+    >Upcoming</p-button
   >
   <h3 class="tableSize">{{ size }} kpl</h3>
 </div>

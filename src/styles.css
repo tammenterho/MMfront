@@ -32,11 +32,11 @@ body {
 }
 
 Button {
-  color: aliceblue;
   padding: 5px 20px 5px; /* up leftright down */
   border-radius: 5px;
   margin: 10px 10px;
   cursor: pointer;
+  font-weight: 500;
 }
 
 .cdk-global-overlay-wrapper {

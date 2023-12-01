@@ -2,7 +2,7 @@
   <app-add-button
     class="add-btn"
     color="{{ showAddTask ? 'danger' : 'success' }}"
-    text="{{ showAddTask ? 'close' : 'add' }}"
+    text="{{ showAddTask ? 'Close' : 'Add' }}"
     (btnClick)="toggleAddTask()"
   ></app-add-button>
   <app-campaign-form (onAddCampaign)="addCampaign($event)"></app-campaign-form>

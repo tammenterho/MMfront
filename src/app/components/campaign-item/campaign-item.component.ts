@@ -15,9 +15,9 @@ export class CampaignItemComponent implements OnInit {
   campaigns: Campaign[] = [];
   filteredCampaigns: Campaign[] = [];
   campaignTime: string = 'current';
-  pastColor: string = 'grey';
-  currentColor: string = 'green';
-  upcomingColor: string = 'grey';
+  pastColor: boolean = false;
+  currentColor: boolean = true;
+  upcomingColor: boolean = false;
   size: number = 0;
   showWholeCampaign: boolean = false;
   campaignData!: Campaign;
@@ -71,27 +71,27 @@ export class CampaignItemComponent implements OnInit {
   onPast() {
     this.campaignTime = 'past';
     this.filterCampaigns();
-    this.upcomingColor = 'grey';
-    this.currentColor = 'grey';
-    this.pastColor = 'green';
+    this.upcomingColor = false;
+    this.currentColor = false;
+    this.pastColor = true;
     this.size = this.filteredCampaigns.length;
     this.emptyCampaigns = 'There have not been any campaigns';
   }
   onCurrent() {
     this.campaignTime = 'current';
     this.filterCampaigns();
-    this.upcomingColor = 'grey';
-    this.currentColor = 'green';
-    this.pastColor = 'grey';
+    this.upcomingColor = false;
+    this.currentColor = true;
+    this.pastColor = false;
     this.size = this.filteredCampaigns.length;
     this.emptyCampaigns = 'Theres no campaigns running at the moment';
   }
   onUpcoming() {
     this.campaignTime = 'upcoming';
     this.filterCampaigns();
-    this.upcomingColor = 'green';
-    this.currentColor = 'grey';
-    this.pastColor = 'grey';
+    this.upcomingColor = true;
+    this.currentColor = false;
+    this.pastColor = false;
     this.size = this.filteredCampaigns.length;
     this.emptyCampaigns = 'Theres no upcoming campaigns';
   }
