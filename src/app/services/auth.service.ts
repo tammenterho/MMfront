@@ -53,6 +53,8 @@ export class AuthService {
     const headers = new HttpHeaders();
     const authToken = this.getAuthToken();
 
+    console.log('AuthService - Request Data:', data);
+
     if (authToken !== null) {
       headers.set('Authorization', `Bearer ${authToken}`);
 
