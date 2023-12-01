@@ -41,6 +41,11 @@ label {
   flex-direction: column;
 }
 
+.urlCta {
+  display: flex;
+  flex-direction: column;
+}
+
 h4 {
   margin-top: 60px;
   border-bottom: 2px solid black;

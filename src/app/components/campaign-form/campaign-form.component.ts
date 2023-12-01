@@ -8,6 +8,9 @@ import { DropdownModule } from 'primeng/dropdown';
 interface Gender {
   name: string;
 }
+interface CTA {
+  name: string;
+}
 
 @Component({
   selector: 'app-campaign-form',
@@ -19,6 +22,9 @@ export class CampaignFormComponent {
 
   targetGender: string = 'all';
   genders: Gender[] | undefined;
+
+  targetCTA: string = 'Contact us!';
+  ctas: CTA[] | undefined;
 
   inputCompany!: string;
   inputName!: string;
@@ -49,6 +55,18 @@ export class CampaignFormComponent {
       { name: 'Male' },
       { name: 'Unknown' },
     ];
+
+    this.ctas = [
+      { name: 'Book Now' },
+      { name: 'Contact Us' },
+      { name: 'Donate Now' },
+      { name: 'Download' },
+      { name: 'Learn More' },
+      { name: 'Send Message' },
+      { name: 'Apply Now' },
+      { name: 'Shop Now' },
+      { name: 'Watch More' },
+    ];
   }
 
   onSubmit() {
@@ -70,6 +88,7 @@ export class CampaignFormComponent {
       this.auth.getLogin().firstName + ' ' + this.auth.getLogin().lastName;
 
     let tGender = JSON.stringify(this.targetGender);
+    let adCta = JSON.stringify(this.targetCTA);
 
     const newCampaign = {
       creator: creator,
@@ -80,7 +99,7 @@ export class CampaignFormComponent {
       adtitle: this.inputAdTitle,
       adtext: this.inputAdText,
       adtarget:
-        'Age: ' +
+        'Age ' +
         this.inputAdTarget +
         ', ' +
         (tGender ? ' ' + JSON.parse(tGender).name : ''),
@@ -89,7 +108,7 @@ export class CampaignFormComponent {
       adstart: this.inputStart,
       adend: this.inputEnd,
       mediainfo: this.inputMedia,
-      adurl: this.inputUrl,
+      adurl: this.inputUrl + ', ' + (adCta ? ' ' + JSON.parse(adCta).name : ''),
       adother: this.inputOther,
       adstatus: 'N',
     };

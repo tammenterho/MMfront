@@ -117,15 +117,27 @@
     >
     </textarea>
   </div>
-  <div class="input-url">
-    <label for="inputUrl">Campaign URL and CTA</label>
-    <input
-      type="text"
-      name="inputUrl"
-      [(ngModel)]="inputUrl"
-      id="inputUrl"
-      placeholder="e.g. www.pekkascar.com  Take this offer!"
-    />
+  <div class="urlCta">
+    <div class="input-url">
+      <label for="inputUrl">Campaign URL</label>
+      <input
+        type="text"
+        name="inputUrl"
+        [(ngModel)]="inputUrl"
+        id="inputUrl"
+        placeholder="e.g. www.pekkascar.com  Take this offer!"
+      />
+    </div>
+    <div class="inputCTA">
+      <p-dropdown
+        [options]="ctas"
+        name="adCTA"
+        [(ngModel)]="targetCTA"
+        optionLabel="name"
+        [showClear]="true"
+        placeholder="Select CTA"
+      ></p-dropdown>
+    </div>
   </div>
   <div class="input-other">
     <label for="inputOther">Other Info</label>
