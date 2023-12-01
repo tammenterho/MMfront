@@ -2,13 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import {
-  MatDialogModule,
-  MAT_DIALOG_DATA,
-  MatDialogRef,
-} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -24,7 +21,6 @@ import { provideRouter } from '@angular/router';
 import { AuthModule } from '@auth0/auth0-angular';
 import { AuthService } from './services/auth.service';
 import { HomeComponent } from './components/home/home.component';
-import { EventServiceService } from './services/event-service.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { UsersComponent } from './components/users/users.component';
 
@@ -48,6 +44,7 @@ import { UsersComponent } from './components/users/users.component';
     HttpClientModule,
     MatDialogModule,
     FormsModule,
+    DropdownModule,
     ButtonModule,
     AuthModule.forRoot({
       domain: '{yourDomain}',

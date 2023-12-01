@@ -30,3 +30,18 @@ label {
   opacity: 1; /* Firefox */
   font-style: italic;
 }
+
+.input-adTarget {
+  display: flex;
+  justify-content: space-between;
+}
+
+.adGender {
+  display: flex;
+  flex-direction: column;
+}
+
+h4 {
+  margin-top: 60px;
+  border-bottom: 2px solid black;
+}

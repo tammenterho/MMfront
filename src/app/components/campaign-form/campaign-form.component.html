@@ -1,5 +1,6 @@
 <form *ngIf="showAddTask" (ngSubmit)="onSubmit()">
   <h3>Add new campaign</h3>
+  <h4>General Information</h4>
   <div class="input-company">
     <label for="text">Name of the company</label>
     <input
@@ -20,49 +21,7 @@
       placeholder="e.g. Winter Campaign 2023"
     />
   </div>
-  <div class="input-adTitle">
-    <label for="title">Title for the Campaign</label>
-    <input
-      type="text"
-      name="inputAdTitle"
-      [(ngModel)]="inputAdTitle"
-      id="inputAdTitle"
-      placeholder="e.g. 50% off Winter tyres!"
-    />
-  </div>
-  <div class="input-adText">
-    <label for="inputAdText">Copytext for the Campaign</label>
-    <textarea
-      type="text"
-      name="inputAdText"
-      [(ngModel)]="inputAdText"
-      id="inputAdText"
-      rows="5"
-      placeholder="e.g. Rev up your winter readiness with an exclusive offer – 50% off on Winter Tyres! Ensure a safe and smooth journey through the chilly months with top-notch traction and performance. Don't let winter catch you off guard – seize this limited-time opportunity to equip your vehicle with high-quality winter tyres at half the price. "
-    >
-    </textarea>
-  </div>
-  <div class="input-adTarget">
-    <label for="inputAdTarget">Target Demographics</label>
-    <input
-      type="text"
-      name="inputAdTarget"
-      [(ngModel)]="inputAdTarget"
-      id="inputAdTarget"
-      placeholder="e.g. All ages, only males"
-    />
-  </div>
 
-  <div class="input-adArea">
-    <label for="inputAdArea">Target Area</label>
-    <input
-      type="text"
-      name="inputAdArea"
-      [(ngModel)]="inputAdArea"
-      id="inputAdArea"
-      placeholder="e.g. Central Munchen Area"
-    />
-  </div>
   <div class="budget-date">
     <div class="input-budget">
       <label for="inputBudget">Budget (€)</label>
@@ -87,6 +46,64 @@
       <label for="inputEnd">End</label>
       <input type="date" name="inputEnd" [(ngModel)]="inputEnd" id="inputEnd" />
     </div>
+  </div>
+  <h4>Demographic Information</h4>
+  <div class="input-adTarget">
+    <div>
+      <label for="inputAdTarget">Target Age</label>
+      <input
+        type="text"
+        name="inputAdTarget"
+        [(ngModel)]="inputAdTarget"
+        id="inputAdTarget"
+        placeholder="e.g. All ages, only males"
+      />
+    </div>
+    <div class="adGender">
+      <label for="adGender">Target Gender</label>
+      <p-dropdown
+        [options]="genders"
+        name="adGender"
+        [(ngModel)]="targetGender"
+        optionLabel="name"
+        [showClear]="true"
+        placeholder="Select gender"
+        >Gender</p-dropdown
+      >
+    </div>
+    <div class="input-adArea">
+      <label for="inputAdArea">Target Area</label>
+      <input
+        type="text"
+        name="inputAdArea"
+        [(ngModel)]="inputAdArea"
+        id="inputAdArea"
+        placeholder="e.g. Central Munchen Area"
+      />
+    </div>
+  </div>
+  <h4>Campaign Information</h4>
+  <div class="input-adTitle">
+    <label for="title">Title for the Campaign</label>
+    <input
+      type="text"
+      name="inputAdTitle"
+      [(ngModel)]="inputAdTitle"
+      id="inputAdTitle"
+      placeholder="e.g. 50% off Winter tyres!"
+    />
+  </div>
+  <div class="input-adText">
+    <label for="inputAdText">Copytext for the Campaign</label>
+    <textarea
+      type="text"
+      name="inputAdText"
+      [(ngModel)]="inputAdText"
+      id="inputAdText"
+      rows="5"
+      placeholder="e.g. Rev up your winter readiness with an exclusive offer – 50% off on Winter Tyres! Ensure a safe and smooth journey through the chilly months with top-notch traction and performance. Don't let winter catch you off guard – seize this limited-time opportunity to equip your vehicle with high-quality winter tyres at half the price. "
+    >
+    </textarea>
   </div>
   <div class="input-media">
     <label for="inputMedia">Media Info</label>

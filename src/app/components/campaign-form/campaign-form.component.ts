@@ -1,8 +1,13 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Campaign } from 'src/app/Campaign';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
+import { DropdownModule } from 'primeng/dropdown';
+
+interface Gender {
+  name: string;
+}
 
 @Component({
   selector: 'app-campaign-form',
@@ -11,6 +16,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class CampaignFormComponent {
   @Output() onAddCampaign: EventEmitter<Campaign> = new EventEmitter();
+
+  targetGender: string = 'all';
+  genders: Gender[] | undefined;
 
   inputCompany!: string;
   inputName!: string;
@@ -34,6 +42,15 @@ export class CampaignFormComponent {
       .subscribe((value) => (this.showAddTask = value));
   } // seurataan onTogglea ja jos on true tai false niin add task asetetaan siihen
 
+  ngOnInit() {
+    this.genders = [
+      { name: 'All' },
+      { name: 'Female' },
+      { name: 'Male' },
+      { name: 'Unknown' },
+    ];
+  }
+
   onSubmit() {
     if (!this.inputName) {
       alert('Add name');
@@ -52,6 +69,8 @@ export class CampaignFormComponent {
     let creator =
       this.auth.getLogin().firstName + ' ' + this.auth.getLogin().lastName;
 
+    let tGender = JSON.stringify(this.targetGender);
+
     const newCampaign = {
       creator: creator,
       id: idNumber,
@@ -60,7 +79,11 @@ export class CampaignFormComponent {
       name: this.inputName,
       adtitle: this.inputAdTitle,
       adtext: this.inputAdText,
-      adtarget: this.inputAdTarget,
+      adtarget:
+        'Age: ' +
+        this.inputAdTarget +
+        ', ' +
+        (tGender ? ' ' + JSON.parse(tGender).name : ''),
       adarea: this.inputAdArea,
       adbudget: this.inputBudget,
       adstart: this.inputStart,
