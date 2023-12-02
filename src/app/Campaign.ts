@@ -15,4 +15,5 @@ export interface Campaign {
   adurl: string;
   adother: string;
   adstatus: string;
+  adcontact: string;
 }

@@ -4,8 +4,6 @@ import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
-import { DropdownModule } from 'primeng/dropdown';
-
 interface Gender {
   name: string;
 }
@@ -119,7 +117,7 @@ export class CampaignFormComponent {
       adurl: this.inputUrl + ', ' + (adCta ? ' ' + JSON.parse(adCta).name : ''),
       adother: this.inputOther,
       adstatus: 'N',
-      adContact: this.inputContact,
+      adcontact: this.inputContact,
     };
 
     this.onAddCampaign.emit(newCampaign);
