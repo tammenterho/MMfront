@@ -94,6 +94,7 @@ export class HomeComponent {
         password: input.password,
         email: input.email,
         phone: input.phone,
+        company: input.company,
       })
       .subscribe({
         next: (response) => {

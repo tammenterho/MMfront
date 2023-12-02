@@ -20,6 +20,7 @@ export class LoginFormComponent {
   password: string = '';
   email: string = '';
   phone: string = '';
+  company: string = '';
 
   onLoginTab(): void {
     this.active = 'login';
@@ -49,6 +50,7 @@ export class LoginFormComponent {
       password: this.password,
       email: this.email,
       phone: this.phone,
+      company: this.company,
     });
   }
 }
