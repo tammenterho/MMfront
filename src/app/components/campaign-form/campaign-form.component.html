@@ -139,8 +139,43 @@
       ></p-dropdown>
     </div>
   </div>
-  <p>{{ auth.getLogin()?.email }}</p>
-  <p>{{ auth.getLogin()?.phone }}</p>
+  <h4>Contact regarding this campaign</h4>
+  <div class="inputContact">
+    <div class="inputContactEmail">
+      <p-radioButton
+        name="inputContactEmail"
+        value="{{ auth.getLogin()?.email }}"
+        [(ngModel)]="inputContact"
+        inputId="inputContactEmail"
+      ></p-radioButton>
+      <label for="inputContactEmail" class="ml-2">{{
+        auth.getLogin()?.email
+      }}</label>
+    </div>
+    <div class="inputContactPhone">
+      <p-radioButton
+        name="inputContactPhone"
+        value="{{ auth.getLogin()?.phone }}"
+        [(ngModel)]="inputContact"
+        inputId="inputContactPhone"
+      ></p-radioButton>
+      <label for="inputContactPhone" class="ml-2">{{
+        auth.getLogin()?.phone
+      }}</label>
+    </div>
+    <label for="contactOther" class="ml-2">Other:</label>
+    <div class="inputContactOther">
+      <input
+        inputId="inputContactOther"
+        type="text"
+        name="inputContactOther"
+        pInputText
+        [(ngModel)]="inputContact"
+        (click)="resetRadioButtons()"
+      />
+    </div>
+  </div>
+
   <div class="input-other">
     <label for="inputOther">Other Info</label>
     <textarea

@@ -40,6 +40,8 @@ export class CampaignFormComponent {
   inputUrl!: string;
   inputOther!: string;
 
+  inputContact!: string;
+
   showAddTask!: boolean;
   subscription: Subscription;
 
@@ -70,11 +72,16 @@ export class CampaignFormComponent {
     ];
   }
 
+  resetRadioButtons() {
+    this.inputContact = '';
+  }
+
   onSubmit() {
     if (!this.inputName) {
       alert('Add name');
       return;
     }
+    console.log('tässä on inputcontact' + this.inputContact);
 
     const user = this.auth.getLogin(); //  getLogin() returns user information
     console.log('tässä user id ', user);
@@ -112,6 +119,7 @@ export class CampaignFormComponent {
       adurl: this.inputUrl + ', ' + (adCta ? ' ' + JSON.parse(adCta).name : ''),
       adother: this.inputOther,
       adstatus: 'N',
+      adContact: this.inputContact,
     };
 
     this.onAddCampaign.emit(newCampaign);
@@ -125,5 +133,6 @@ export class CampaignFormComponent {
     this.inputMedia = '';
     this.inputUrl = '';
     this.inputOther = '';
+    this.inputContact = '';
   }
 }

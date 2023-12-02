@@ -50,3 +50,17 @@ h4 {
   margin-top: 60px;
   border-bottom: 2px solid black;
 }
+
+.inputContact {
+  display: flex;
+  justify-content: space-between; /* Asettaa elementit yhtä kauas toisistaan */
+  align-items: center; /* Keskitä elementit pystysuunnassa */
+  margin-top: 20px;
+}
+
+.inputContactEmail,
+.inputContactPhone,
+.inputContactOther {
+  display: flex;
+  align-items: center;
+}
