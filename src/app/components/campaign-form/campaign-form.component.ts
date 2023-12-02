@@ -79,7 +79,7 @@ export class CampaignFormComponent {
       alert('Add name');
       return;
     }
-    console.log('tässä on inputcontact' + this.inputContact);
+    console.log('tässä on inputcompany' + this.inputCompany);
 
     const user = this.auth.getLogin(); //  getLogin() returns user information
     console.log('tässä user id ', user);

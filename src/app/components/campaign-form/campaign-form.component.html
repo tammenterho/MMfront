@@ -2,14 +2,25 @@
   <h3>Add new campaign</h3>
   <h4>General Information</h4>
   <div class="input-company">
-    <label for="text">Name of the company</label>
-    <input
-      type="text"
-      name="inputCompany"
-      [(ngModel)]="inputCompany"
-      id="inputCompany"
-      placeholder="e.g. Pekka's Cars and Tyres Company"
-    />
+    <div class="inputFreeCompany">
+      <label for="text">Name of the company</label>
+      <input
+        type="text"
+        name="inputCompany"
+        [(ngModel)]="inputCompany"
+        id="inputCompany"
+        placeholder="e.g. Pekka's Company"
+      />
+    </div>
+    <div class="inputCompanyRadio">
+      <label for="text">{{ auth.getLogin()?.company }}</label>
+      <p-radioButton
+        name="inputCompanyRadio"
+        value="{{ auth.getLogin()?.company }}"
+        [(ngModel)]="inputCompany"
+        inputId="inputCompanyRadio"
+      ></p-radioButton>
+    </div>
   </div>
   <div class="input-name">
     <label for="text">Name of the campaign</label>

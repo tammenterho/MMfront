@@ -51,7 +51,8 @@ h4 {
   border-bottom: 2px solid black;
 }
 
-.inputContact {
+.inputContact,
+.input-company {
   display: flex;
   justify-content: space-between; /* Asettaa elementit yhtä kauas toisistaan */
   align-items: center; /* Keskitä elementit pystysuunnassa */
@@ -60,7 +61,13 @@ h4 {
 
 .inputContactEmail,
 .inputContactPhone,
-.inputContactOther {
+.inputContactOther,
+.inputCompanyRadio {
   display: flex;
   align-items: center;
+}
+
+.input-company,
+.input-name {
+  width: 45%; /* Säädä divien leveyksiä tarpeen mukaan */
 }
