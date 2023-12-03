@@ -10,14 +10,14 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
   styles: [
     `
       :host ::ng-deep .p-panel-header {
-        background-color: var(--teal-500);
-        border-color: var(--teal-500);
+        background-color: #c6953f;
+        border-color: #c6953f;
         color: #ffffff;
         font-family: 'Barlow', sans-serif;
       }
 
       :host ::ng-deep .p-panel-content {
-        border-color: var(--teal-500);
+        border-color: #c6953f;
         font-family: 'Barlow', sans-serif;
       }
     `,
