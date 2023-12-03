@@ -1,5 +1,4 @@
 .popup p {
-  font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: 400;
 }
 
@@ -16,6 +15,13 @@
 .contact {
   display: flex;
   margin-bottom: 40px;
+  margin: auto;
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+.creator {
+  margin-top: 20px;
 }
 
 .creator-title,
@@ -26,6 +32,8 @@
 .contact-info {
   font-style: italic;
   margin-left: 20px;
+  text-align: center;
+  font-size: large;
 }
 
 h4 {
