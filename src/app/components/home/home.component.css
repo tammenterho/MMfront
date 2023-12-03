@@ -28,3 +28,17 @@ p-button {
   text-align: center;
   margin-top: 50px;
 }
+.legends {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+.legend {
+  display: flex;
+  flex-direction: row;
+}
+
+.legend p {
+  margin-left: 20px;
+}

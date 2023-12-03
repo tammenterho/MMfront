@@ -51,7 +51,14 @@
         user.login === 'admin' && campaign.id && toggleStatus(campaign.id)
       "
     >
-      {{ campaign.adstatus === "Y" ? "✓" : "❌" }}
+      <i
+        class="pi {{
+          campaign.adstatus === 'Y' ? 'pi-check-circle' : 'pi-circle'
+        }}"
+        style="color: {{
+          campaign.adstatus === 'Y' ? 'green' : 'red'
+        }}; font-size: 1.5rem;"
+      ></i>
     </td>
     <td
       *ngIf="
@@ -59,11 +66,18 @@
         (user.login !== 'admin' && campaign.adstatus === 'N')
       "
     >
-      <img
+      <i
         (click)="campaign.id && deleteCampaign(campaign.id)"
-        class="delete-icon"
-        src="../assets/images/delete-icon.svg"
-      />
+        class="pi pi-delete-left"
+        style="
+          color: red;
+          font-size: 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+      </i>
     </td>
   </tr>
 </table>
