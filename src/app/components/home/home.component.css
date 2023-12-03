@@ -31,7 +31,7 @@ p-button {
 .legends {
   display: flex;
   flex-direction: column;
-  margin-left: 50px;
+  margin-left: 80px;
 }
 
 .legend {

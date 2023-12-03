@@ -3,13 +3,15 @@
   <h4>General Information</h4>
   <div class="input-company">
     <div class="inputFreeCompany">
-      <label for="text">Name of the company</label>
+      <label for="text">Company name</label>
       <input
         type="text"
         name="inputCompany"
         [(ngModel)]="inputCompany"
         id="inputCompany"
         placeholder="e.g. Pekka's Company"
+        pInputText
+        pTooltip="Enter your Company's name"
       />
     </div>
     <div class="inputCompanyRadio">
