@@ -7,6 +7,21 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
   selector: 'app-campaign-dialog',
   templateUrl: './campaign-dialog.component.html',
   styleUrls: ['./campaign-dialog.component.css'],
+  styles: [
+    `
+      :host ::ng-deep .p-panel-header {
+        background-color: var(--teal-500);
+        border-color: var(--teal-500);
+        color: #ffffff;
+        font-family: 'Barlow', sans-serif;
+      }
+
+      :host ::ng-deep .p-panel-content {
+        border-color: var(--teal-500);
+        font-family: 'Barlow', sans-serif;
+      }
+    `,
+  ],
 })
 export class CampaignDialogComponent {
   campaigns: Campaign[] = [];

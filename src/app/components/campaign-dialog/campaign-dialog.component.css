@@ -9,24 +9,51 @@
 }
 
 .popup {
-  padding: 50px;
-  background-color: rgb(242, 246, 227);
+  background-color: rgb(255, 255, 255);
 }
 
-.creator {
+.creator,
+.contact {
   display: flex;
   margin-bottom: 40px;
 }
 
-.creator-title {
+.creator-title,
+.contact-title {
   font-weight: 700;
 }
-.creator-name {
+.creator-name,
+.contact-info {
   font-style: italic;
   margin-left: 20px;
+}
+
+h4 {
+  margin-top: 60px;
+  border-bottom: 2px solid black;
 }
 /*
  border-bottom: solid 1px black;
   padding: 10px;
 
 */
+
+td {
+  padding-left: 20px;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+tr:nth-child(even) {
+  background-color: #eae3e3;
+}
+
+.rivi {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+table th {
+  min-width: 200px;
+}

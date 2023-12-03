@@ -7,6 +7,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { PanelModule } from 'primeng/panel';
+import { TableModule } from 'primeng/table';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -47,6 +49,8 @@ import { UsersComponent } from './components/users/users.component';
     FormsModule,
     DropdownModule,
     ButtonModule,
+    PanelModule,
+    TableModule,
     RadioButtonModule,
     AuthModule.forRoot({
       domain: '{yourDomain}',
