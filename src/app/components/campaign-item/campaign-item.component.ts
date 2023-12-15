@@ -30,7 +30,9 @@ export class CampaignItemComponent implements OnInit {
     public dialog: MatDialog,
     private eventService: EventServiceService,
     private auth: AuthService
-  ) {}
+  ) {
+    console.log('CampaignItemComponent created');
+  }
 
   ngOnInit(): void {
     this.getAllCampaigns();
@@ -38,14 +40,18 @@ export class CampaignItemComponent implements OnInit {
   }
 
   private subscribeToAddCampaignEvent() {
-    this.eventService.addCampaign$.subscribe(() => {
-      this.getAllCampaigns();
-    }); // servicet pitää aina laittaa konstruktoriin
+    this.eventService.addCampaign$.subscribe((newCampaign) => {
+      console.log('Received addCampaignEvent in CampaignItemComponent');
+      if (newCampaign) {
+        this.campaigns.push(newCampaign);
+        this.filterCampaigns(); // Suorita uudelleen suodatus ja päivitys paikalliselle listalle
+      }
+    });
   }
 
   getAllCampaigns() {
     this.campaignService.getCampaigns().subscribe((campaigns) => {
-      this.user = this.auth.getLogin(); // Assuming getLogin() returns user information
+      /*this.user = this.auth.getLogin(); // Assuming getLogin() returns user information
       if (this.user.login === 'admin') {
         this.campaigns = campaigns;
       } else {
@@ -54,10 +60,12 @@ export class CampaignItemComponent implements OnInit {
             campaign.owner === this.user.id || this.user.login === 'admin'
         );
       }
-
+*/
+      this.campaigns = campaigns;
       this.filteredCampaigns = [...this.campaigns]; // Kopio alkuperäisestä taulukosta
       this.filterCampaigns(); // filteröidään currentin mukaan heti. sbscribe asynkroninen kuten then
       this.size = this.filteredCampaigns.length; // asetaan listan koko heti
+      console.log('haetaan kampanjat itsem komponentissa' + this.campaigns);
 
       if (this.filteredCampaigns.length === 0) {
         this.noCampaigns = true;
@@ -78,6 +86,8 @@ export class CampaignItemComponent implements OnInit {
     this.emptyCampaigns = 'There have not been any campaigns';
   }
   onCurrent() {
+    console.log('onCurrent called');
+
     this.campaignTime = 'current';
     this.filterCampaigns();
     this.upcomingColor = false;
