@@ -53,6 +53,14 @@ This project currently features registration, login, creating a campaign, viewin
    ng serve
    ```
 
+6. Create admin to DB
+
+- create admin in register application
+  OR
+- create admin with DBeaver
+- Database must have table ready with necessary columns
+- admin must have firstname: "admin", lastname: admin, username: admin.
+
 ![login](images/img-login.png)
 ![register](images/img-register.png)
 ![home for admin](images/img-home3.png)
