@@ -48,28 +48,40 @@ export class CampaignItemComponent implements OnInit {
       }
     });
   }
-
   getAllCampaigns() {
     this.campaignService.getCampaigns().subscribe((campaigns) => {
-      /*this.user = this.auth.getLogin(); // Assuming getLogin() returns user information
+      this.user = this.auth.getLogin(); // Assuming getLogin() returns user information
+
       if (this.user.login === 'admin') {
+        // If the user is an admin, show all campaigns
         this.campaigns = campaigns;
       } else {
+        // If the user is not an admin, filter campaigns based on ownership
         this.campaigns = campaigns.filter(
           (campaign) =>
             campaign.owner === this.user.id || this.user.login === 'admin'
         );
       }
-*/
-      this.campaigns = campaigns;
-      this.filteredCampaigns = [...this.campaigns]; // Kopio alkuperäisestä taulukosta
-      this.filterCampaigns(); // filteröidään currentin mukaan heti. sbscribe asynkroninen kuten then
-      this.size = this.filteredCampaigns.length; // asetaan listan koko heti
-      console.log('haetaan kampanjat itsem komponentissa' + this.campaigns);
 
+      // The following line is unnecessary as it overwrites the previous assignment
+      // this.campaigns = campaigns;
+
+      // Copy the campaigns to filteredCampaigns
+      this.filteredCampaigns = [...this.campaigns];
+
+      // Filter campaigns based on time
+      this.filterCampaigns();
+
+      // Set the size of the filtered campaigns
+      this.size = this.filteredCampaigns.length;
+
+      // Log the campaigns (optional)
+      console.log('Fetched campaigns in the component:', this.campaigns);
+
+      // Check if there are no campaigns
       if (this.filteredCampaigns.length === 0) {
         this.noCampaigns = true;
-        this.emptyCampaigns = 'There is no campaigns running at the moment';
+        this.emptyCampaigns = 'There are no campaigns running at the moment';
       } else {
         this.noCampaigns = false;
       }

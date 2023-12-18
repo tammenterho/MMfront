@@ -49,6 +49,8 @@ export class LoginFormComponent {
       login: this.login,
       password: this.password,
       email: this.email,
+      company: this.company,
+      phone: this.phone,
     });
   }
 }
