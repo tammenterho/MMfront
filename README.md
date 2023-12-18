@@ -1,30 +1,57 @@
-# MMFront
+# Marketing Manager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
+### Currently
 
-## Development server
+This project currently features registration, login, creating a campaign, viewing future, current and past campaigns.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+1. Clone the repository
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+   ```bash
+   git clone https://github.com/tammenterho/MMfront.git
+   cd mmfront
+   ```
 
-## Build
+2. Install dependencies for the client and server
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+   ```bash
+   cd mmfront
+   npm install
+   ```
 
-## Running unit tests
+## Usage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Start/Create the OracleDB database.
 
-## Running end-to-end tests
+- You need docker desktop for this.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+  ```bash
+  docker pull container-registry.oracle.com/database/free:latest
+  docker run -d -p 1521:1521 -e ORACLE_PASSWORD=yourpassword -v oracle-volume:/opt/oracle/oradata gvenzl/oracle
+  -free
+  ```
 
-## Further help
+2. Create needed tables to OracleDB with DBeaver once docker container is running and connected. Check tabledata from backend [entities](https://github.com/tammenterho/MMback/tree/master/src/main/java/com/mikko/mmback/entities)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```bash
+   cd server
+   npm run dev
+   ```
+
+3. Clone server from [here](https://github.com/tammenterho/MMback.git)
+
+4. Start the server
+   ```bash
+   cd server
+   gradlew bootRun
+   ```
+5. Start the client
+
+   ```bash
+   cd client
+   ng serve
+   ```
 
 ![login](images/img-login.png)
 ![register](images/img-register.png)
